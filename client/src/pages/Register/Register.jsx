@@ -29,7 +29,7 @@ function Register() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/register",
+        `${import.meta.env.VITE_API_URL}/api/auth/register`,
         {
           method: "POST",
           headers: {
@@ -47,6 +47,7 @@ function Register() {
       } else {
         alert(data.message);
       }
+
     } catch (error) {
       console.error(error);
       alert("Unable to connect to server.");
@@ -104,7 +105,6 @@ function Register() {
         />
         <br /><br />
 
-
         <select
           name="bloodGroup"
           onChange={handleChange}
@@ -122,7 +122,6 @@ function Register() {
         </select>
 
         <br /><br />
-
 
         <input
           type="text"
@@ -144,7 +143,6 @@ function Register() {
 
         <br /><br />
 
-
         <input
           type="text"
           name="state"
@@ -155,7 +153,6 @@ function Register() {
 
         <br /><br />
 
-
         <input
           type="number"
           name="age"
@@ -165,7 +162,6 @@ function Register() {
         />
 
         <br /><br />
-
 
         <select
           name="gender"
@@ -180,7 +176,6 @@ function Register() {
 
         <br /><br />
 
-
         <select
           name="role"
           onChange={handleChange}
@@ -191,7 +186,6 @@ function Register() {
         </select>
 
         <br /><br />
-
 
         <button type="submit">
           Register
